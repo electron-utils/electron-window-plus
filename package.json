@@ -1,0 +1,34 @@
+{
+  "name": "electron-window-plus",
+  "version": "1.0.0",
+  "description": "Save and restore window states.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node run.js",
+    "test": "mocha test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron-utils/electron-window-plus.git"
+  },
+  "keywords": [
+    "Electron",
+    "windows"
+  ],
+  "author": "jwu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/electron-utils/electron-window-plus/issues"
+  },
+  "homepage": "https://github.com/electron-utils/electron-window-plus",
+  "devDependencies": {
+    "electron": "^1.6.0",
+    "mocha": "^3.2.0",
+    "spectron": "^3.6.0"
+  },
+  "dependencies": {
+    "electron-platform": "^1.2.0",
+    "electron-profile": "^1.0.1",
+    "electron-protocols": "^1.0.2"
+  }
+}
