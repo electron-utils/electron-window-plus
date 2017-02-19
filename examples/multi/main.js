@@ -1,6 +1,6 @@
 'use strict';
 
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 const windowPlus = require('../../index');
 
 app.on('ready', function () {
@@ -26,4 +26,15 @@ app.on('ready', function () {
     windowPlus.manage(win);
     windowPlus.manage(win2);
   }
+});
+
+ipcMain.on('new-window', () => {
+  let win = new BrowserWindow({
+    width: 400,
+    height: 300,
+  });
+  win.loadURL('file://' + __dirname + '/index-02.html');
+
+  windowPlus.adjustToMain(win);
+  windowPlus.manage(win);
 });

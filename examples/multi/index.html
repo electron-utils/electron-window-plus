@@ -19,6 +19,15 @@
 
   <body>
     <h2>Main Window</h2>
-    <button>Reset</button>
+    <button id="new">New Window</button>
+
+    <script>
+      const {ipcRenderer} = require('electron');
+
+      let btn = document.getElementById('new');
+      btn.addEventListener('click', () => {
+        ipcRenderer.send('new-window');
+      });
+    </script>
   </body>
 </html>
