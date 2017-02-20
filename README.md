@@ -1,7 +1,7 @@
 # electron-window-plus
 
 [![Linux Build Status](https://travis-ci.org/electron-utils/electron-window-plus.svg?branch=master)](https://travis-ci.org/electron-utils/electron-window-plus)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/ym6vcqcpqmv3dd34?svg=true)](https://ci.appveyor.com/project/jwu/electron-window-plus)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/7cf5xyawomjy3na2?svg=true)](https://ci.appveyor.com/project/jwu/electron-window-plus)
 [![Dependency Status](https://david-dm.org/electron-utils/electron-window-plus.svg)](https://david-dm.org/electron-utils/electron-window-plus)
 [![devDependency Status](https://david-dm.org/electron-utils/electron-window-plus/dev-status.svg)](https://david-dm.org/electron-utils/electron-window-plus#info=devDependencies)
 
