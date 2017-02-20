@@ -4,27 +4,33 @@ const {app, BrowserWindow, ipcMain} = require('electron');
 const windowPlus = require('../../index');
 
 app.on('ready', function () {
-  windowPlus.restore();
-
-  if ( windowPlus.empty ) {
+  if ( !windowPlus.restore() ) {
     let win = new BrowserWindow({
       x: 100,
       y: 100,
-      width: 400,
+      width: 300,
       height: 300,
     });
+    windowPlus.manage(win);
     win.loadURL('file://' + __dirname + '/index.html');
 
     let win2 = new BrowserWindow({
-      x: 510,
+      x: 410,
       y: 100,
-      width: 400,
+      width: 300,
       height: 300,
     });
+    windowPlus.manage(win2);
     win2.loadURL('file://' + __dirname + '/index-02.html');
 
-    windowPlus.manage(win);
-    windowPlus.manage(win2);
+    let win3 = new BrowserWindow({
+      x: 720,
+      y: 100,
+      width: 300,
+      height: 300,
+    });
+    windowPlus.manage(win3);
+    windowPlus.loadURL(win3, 'http://electron.atom.io');
   }
 });
 
