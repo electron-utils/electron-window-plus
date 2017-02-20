@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sub</title>
+    <style>
+      body {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #333;
+      }
+
+      h2 {
+        color: #f90;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2 id="header">Header</h2>
+    <div id="content">Content</div>
+
+    <script>
+      let argv = {};
+      if ( window.location.hash ) {
+        let hash = window.location.hash.slice(1);
+        argv = Object.freeze(JSON.parse(decodeURIComponent(hash)));
+      }
+
+      if ( argv.header ) {
+        document.getElementById('header').innerText = argv.header;
+      }
+
+      if ( argv.content ) {
+        document.getElementById('content').innerText = argv.content;
+      }
+    </script>
+  </body>
+</html>

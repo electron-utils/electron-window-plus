@@ -11,8 +11,9 @@ app.on('ready', function () {
       width: 300,
       height: 300,
     });
+
     windowPlus.manage(win);
-    win.loadURL('file://' + __dirname + '/index.html');
+    windowPlus.loadURL(win, `file://${__dirname}/index.html`);
 
     let win2 = new BrowserWindow({
       x: 410,
@@ -21,7 +22,7 @@ app.on('ready', function () {
       height: 300,
     });
     windowPlus.manage(win2);
-    win2.loadURL('file://' + __dirname + '/index-02.html');
+    windowPlus.loadURL(win2, `file://${__dirname}/sub.html`);
 
     let win3 = new BrowserWindow({
       x: 720,
@@ -32,15 +33,33 @@ app.on('ready', function () {
     windowPlus.manage(win3);
     windowPlus.loadURL(win3, 'http://electron.atom.io');
   }
+
+  //
+  windowPlus.main.webContents.on('will-navigate', (event, url) => {
+    event.preventDefault();
+
+    let newWin = new BrowserWindow({
+      width: 400,
+      height: 300,
+    });
+    newWin.loadURL(url);
+    windowPlus.manage(newWin);
+    windowPlus.adjustToMain(newWin);
+  });
 });
 
-ipcMain.on('new-window', () => {
+ipcMain.on('new-window', (event, header, content) => {
   let win = new BrowserWindow({
     width: 400,
     height: 300,
   });
-  win.loadURL('file://' + __dirname + '/index-02.html');
 
-  windowPlus.adjustToMain(win);
   windowPlus.manage(win);
+  windowPlus.adjustToMain(win);
+  windowPlus.loadURL(win, `file://${__dirname}/sub.html`, {
+    header: header,
+    content: content
+  });
 });
+
+// https://github.com/electron/electron#documentation

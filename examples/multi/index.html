@@ -14,11 +14,22 @@
       h2 {
         color: #09f;
       }
+
+      input {
+        margin-bottom: 5px;
+      }
     </style>
   </head>
 
   <body>
     <h2>Main Window</h2>
+    <a href="https://github.com/electron/electron#documentation">Electron Documentation</a>
+
+    <input id="header" placeholder="header"></input>
+    <input id="content" placeholder="content"></input>
+
+    <div style="flex: 1"></div>
+
     <button id="new">New Window</button>
 
     <script>
@@ -26,7 +37,10 @@
 
       let btn = document.getElementById('new');
       btn.addEventListener('click', () => {
-        ipcRenderer.send('new-window');
+        let header = document.getElementById('header').value;
+        let content = document.getElementById('content').value;
+
+        ipcRenderer.send('new-window', header, content);
       });
     </script>
   </body>
