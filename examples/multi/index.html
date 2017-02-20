@@ -18,6 +18,10 @@
       input {
         margin-bottom: 5px;
       }
+
+      button {
+        margin-bottom: 5px;
+      }
     </style>
   </head>
 
@@ -31,6 +35,7 @@
     <div style="flex: 1"></div>
 
     <button id="new">New Window</button>
+    <button id="new-no-mng">New Window (Do not manage)</button>
 
     <script>
       const {ipcRenderer} = require('electron');
@@ -41,6 +46,14 @@
         let content = document.getElementById('content').value;
 
         ipcRenderer.send('new-window', header, content);
+      });
+
+      let btnNoMng = document.getElementById('new-no-mng');
+      btnNoMng.addEventListener('click', () => {
+        let header = document.getElementById('header').value;
+        let content = document.getElementById('content').value;
+
+        ipcRenderer.send('new-window-no-mng', header, content);
       });
     </script>
   </body>

@@ -62,4 +62,15 @@ ipcMain.on('new-window', (event, header, content) => {
   });
 });
 
-// https://github.com/electron/electron#documentation
+ipcMain.on('new-window-no-mng', (event, header, content) => {
+  let win = new BrowserWindow({
+    width: 400,
+    height: 300,
+  });
+
+  windowPlus.adjustToMain(win);
+  windowPlus.loadURL(win, `file://${__dirname}/sub.html`, {
+    header: header,
+    content: content
+  });
+});
