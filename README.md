@@ -26,12 +26,19 @@ npm start examples/${name}
 ## Usage
 
 ```javascript
+const {app, BrowserWindow} = require('electron');
 const windowPlus = require('electron-window-plus');
 
-windowPlus.restore(`${__dirname}/index.html`, {
-  center: true,
-  width: 400,
-  height: 300,
+app.on('ready', function () {
+  if ( !windowPlus.restore() ) {
+    let win = new BrowserWindow({
+      width: 300,
+      height: 300,
+    });
+
+    windowPlus.manage(win);
+    windowPlus.loadURL(win, `file://${__dirname}/index.html`);
+  }
 });
 ```
 
