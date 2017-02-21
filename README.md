@@ -114,7 +114,7 @@ Adds a one time event listener function.
 
 ### Properties
 
-### windowPlus.main `BrowserWindow`
+### windowPlus.main (BrowserWindow)
 
 The main window.
 
