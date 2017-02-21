@@ -7,9 +7,13 @@
 
 Save and restore window states.
 
-## Why?
+## Why this module?
 
-  - Support multiple window state save and restore.
+There are several great module such as [electron-window-state](https://github.com/mawie81/electron-window-state), [electron-window-manager](https://github.com/TamkeenLMS/electron-window-manager)
+that doing the same thing. What is the advantage of this module compare to them?
+
+  - Support save and restore multiple windows.
+  - Do not introduce new Window class for management.
 
 ## Install
 
@@ -44,7 +48,75 @@ app.on('ready', function () {
 
 ## API Reference
 
-TODO
+### Methods
+
+### windowPlus.restore ([url, opts])
+
+  - `url` string
+  - `opts` options
+
+### windowPlus.manage (win)
+
+  - `win` BrowserWindow
+
+### windowPlus.unmanage (win)
+
+  - `win` BrowserWindow|number
+
+### windowPlus.update (win, info)
+
+  - `win` BrowserWindow|number
+  - `info` object
+
+### windowPlus.save ()
+
+### windowPlus.loadURL (win, url, argv)
+
+  - `win` BrowserWindow
+  - `string` url
+  - `object` argv
+
+### windowPlus.adjust (win, x, y, w, h)
+  - `win` BrowserWindow
+  - `x` number
+  - `y` number
+  - `w` number
+  - `h` number
+
+Try to adjust the window to fit the position and size we give
+
+### windowPlus.adjustToMain (win)
+
+  - `win` BrowserWindow
+
+Adjust window position to make it open in the same display screen as main window
+
+### windowPlus.on (eventName, listener)
+
+  - `eventName` string
+  - `listener` function
+
+Adds an event listener function.
+
+### windowPlus.off (eventName, listener)
+
+  - `eventName` string
+  - `listener` function
+
+Removes an event listener function.
+
+### windowPlus.once (eventName, listener)
+
+  - `eventName` string
+  - `listener` function
+
+Adds a one time event listener function.
+
+### Properties
+
+### windowPlus.main `BrowserWindow`
+
+The main window.
 
 ## License
 
