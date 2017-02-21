@@ -69,6 +69,10 @@ app.on('ready', function () {
   - `win` BrowserWindow|number
   - `info` object
 
+### windowPlus.getWinInfo (win)
+
+  - `win` BrowserWindow|number
+
 ### windowPlus.save ()
 
 ### windowPlus.loadURL (win, url, argv)
@@ -115,9 +119,17 @@ Adds a one time event listener function.
 
 ### Properties
 
-### windowPlus.main (BrowserWindow)
+### windowPlus.main
 
 The main window.
+
+### Events
+
+### 'manage'
+
+### 'unmanage'
+
+### 'save'
 
 ## License
 
