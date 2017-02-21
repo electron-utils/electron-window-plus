@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    <style>
+      body {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+
+        font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue','Segoe UI','Oxygen','Ubuntu','Cantarell','Open Sans',sans-serif;
+        background: #500;
+      }
+
+      h2 {
+        color: #ccc;
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        border: 0px;
+        color: white; 
+        border-radius: 4px; 
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: #09f;
+        padding: 5px 15px;
+        width: 80px;
+      }
+
+      button:hover {
+        cursor: pointer; 
+      }
+
+      button:active {
+        background: #05e;
+      }
+
+      button:focus {
+        outline: 0;
+      }
+
+      button#close {
+        background: #c00;
+      }
+
+      button#close:active {
+        background: #800;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Main Window Loading Failed!</h2>
+    <div>
+      <button id="reopen">Reopen</button>
+      <button id="close">Close</button>
+    </div>
+
+    <script>
+      'use strict';
+
+      const {remote} = require('electron');
+      document.getElementById('reopen').addEventListener('click', () => {
+        remote.app.relaunch();
+        remote.app.quit();
+      });
+      document.getElementById('close').addEventListener('click', () => {
+        remote.app.quit();
+      });
+    </script>
+  </body>
+</html>

@@ -13,7 +13,8 @@ There are several great module such as [electron-window-state](https://github.co
 that doing the same thing. What is the advantage of this module compare to them?
 
   - Support save and restore multiple windows.
-  - Do not introduce new Window class for management.
+  - Did not introduce new Window class for management.
+  - Try to recover to default when restore failed.
 
 ## Install
 
