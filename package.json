@@ -1,6 +1,6 @@
 {
   "name": "electron-window-plus",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Save and restore window states.",
   "main": "index.js",
   "scripts": {
