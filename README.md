@@ -9,9 +9,11 @@ Save and restore window states.
 
 **TODO**
 
-  - [ ] Tests for _mainWindowFailed: windowPlus.loadURL failed and did-fail-load
-  - [ ] Tests for windowPlus.restore()
-  - [ ] Other tests...
+  - [ ] Add tests for _mainWindowFailed: windowPlus.loadURL failed and did-fail-load.
+  - [ ] Add tests for userdata update & restore.
+  - [ ] Add test for main window url different to default. 
+  - [ ] Add tests for windowPlus.restore().
+  - [ ] Add other tests...
 
 ## Why this module?
 
@@ -57,27 +59,29 @@ app.on('ready', function () {
 
 ### Methods
 
-### windowPlus.restore ([url, opts])
+### windowPlus.restore ([defaultUrl, opts])
 
-  - `url` string
+  - `defaultUrl` string
   - `opts` options
 
-### windowPlus.manage (win)
+### windowPlus.manage (win[, uuid, userdata])
 
   - `win` BrowserWindow
+  - `uuid` string
+  - `userdata` object
 
 ### windowPlus.unmanage (win)
 
   - `win` BrowserWindow|number
 
-### windowPlus.update (win, info)
+### windowPlus.getUserData (win)
 
   - `win` BrowserWindow|number
-  - `info` object
 
-### windowPlus.getWinInfo (win)
+### windowPlus.updateUserData (win, userdata)
 
   - `win` BrowserWindow|number
+  - `userdata` object
 
 ### windowPlus.save ()
 

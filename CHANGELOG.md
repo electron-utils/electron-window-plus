@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### v1.3.1
+
+  - Fix user data not load.
+  - Reset the window when main window's url is different than default.
+
 ### v1.3.0
 
   - Fix user field not save to window profile when we call `windowPlus.update()`.
