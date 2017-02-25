@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### v1.3.0
+
+  - Fix user field not save to window profile when we call `windowPlus.update()`.
+  - Emit `main-window-failed` event when main window loading failed.
+  - Handle main window loading failed when the url is null.
+
 ### v1.2.1
 
   - Fix app can not quit after all windows closed while we don't use `electron-window-plus` manage windows. 

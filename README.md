@@ -7,6 +7,12 @@
 
 Save and restore window states.
 
+**TODO**
+
+  - [ ] Tests for _mainWindowFailed: windowPlus.loadURL failed and did-fail-load
+  - [ ] Tests for windowPlus.restore()
+  - [ ] Other tests...
+
 ## Why this module?
 
 There are several great module such as [electron-window-state](https://github.com/mawie81/electron-window-state), [electron-window-manager](https://github.com/TamkeenLMS/electron-window-manager)
@@ -127,9 +133,19 @@ The main window.
 
 ### 'manage'
 
+Emit when window get managed via `windowPlus.manage()`.
+
 ### 'unmanage'
 
+Emit when window unmanaged via `windowPlus.unmanage()`.
+
 ### 'save'
+
+Emit when window profile saved.
+
+### 'main-window-failed'
+
+Emit when main window loading failed.
 
 ## License
 
