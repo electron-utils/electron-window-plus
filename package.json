@@ -4,7 +4,7 @@
   "description": "Save and restore window states.",
   "main": "index.js",
   "scripts": {
-    "start": "node run.js",
+    "start": "electron",
     "test": "mocha test/*.spec.js"
   },
   "repository": {
