@@ -22,14 +22,14 @@
   },
   "homepage": "https://github.com/electron-utils/electron-window-plus",
   "devDependencies": {
-    "electron": "^1.6.2",
+    "electron": "^1.6.5",
     "mocha": "^3.2.0",
-    "spectron": "^3.6.0"
+    "spectron": "^3.6.1"
   },
   "dependencies": {
     "electron-platform": "^1.2.0",
     "electron-profile": "^1.0.3",
-    "electron-protocols": "^1.0.2",
+    "electron-protocols": "^1.0.3",
     "uuid": "^3.0.1"
   }
 }
