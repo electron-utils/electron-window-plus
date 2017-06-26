@@ -13,7 +13,7 @@
 
 ### v1.2.1
 
-  - Fix app can not quit after all windows closed while we don't use `electron-window-plus` manage windows. 
+  - Fix app can not quit after all windows closed while we don't use `electron-window-plus` manage windows.
 
 ### v1.2.0
 
