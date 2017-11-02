@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "electron-platform": "^1.2.0",
-    "electron-profile": "^1.0.3",
+    "electron-profile": "^1.1.0",
     "electron-protocols": "^1.0.4",
     "uuid": "^3.0.1"
   }
